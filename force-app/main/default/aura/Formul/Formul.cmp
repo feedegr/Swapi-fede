@@ -1,0 +1,86 @@
+<aura:component controller="FormularioController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="buscadorStar" type="integer"/>
+    
+    <aura:attribute name="datos" type="Contact"
+                    default="{'sobjectType': 'Contact',
+                             'LastName': '',
+                             'Altura__c': '',
+                             'Color_cabello__c': '',
+                             'Color_ojos__c': '',
+                             'Genero__c': '',
+                             'URL__c':'',
+                             'Planeta__c':''
+                             }"/>
+    
+
+    <lightning:layout class="slds-page-header slds-page-header_object-home">
+    	<lightning:layoutItem>
+            <lightning:icon iconName="utility:connected_apps" alternativeText="Connected" title="Connected" />
+        </lightning:layoutItem>
+        	<lightning:layoutItem padding="horizontal-small">
+            	<div class="page-section page-header">
+            		 <h1 class="slds-text-heading_label">Personajes de Star Wars</h1>
+          	    </div>
+       		</lightning:layoutItem>
+    </lightning:layout>
+    
+    <lightning:layout>
+        <lightning:layoutItem class="slds-p-top_small" size="12">
+            <fieldset class="slds-box slds-theme_default slds-container_medium">
+       
+                <div aria-labelledby="starWarsform">
+                   
+                    <legend id="starWarsform" class="slds-text-heading_small
+                                                     slds-p-vertical_medium">
+                     Buscar y guardar Personaje
+                    </legend>
+                    
+                    
+                    <form class="slds-form_stacked" >
+                        
+                        <lightning:input type="number" aura:id="starWarsBuscador" value="{!v.buscadorStar}"
+                                         name="input1" label="Introduzca un numero para buscar personaje" />
+                        
+                        <lightning:input name="input1" aura:id="starWarsform1" value="{!v.datos.LastName}" 
+                                         disabled="true" label="Personaje" />
+                        
+                        <lightning:input name="input2" aura:id="starWarsform" value= "{!v.datos.Altura__c}"
+                                         disabled="true" label="Altura" />
+                        
+                        <lightning:input name="input3" aura:id="starWarsform" value="{!v.datos.Color_cabello__c}"
+                                         disabled="true" label="Color cabello" />
+                        
+                        <lightning:input name="input4" aura:id="starWarsform" value="{!v.datos.Color_ojos__c}" 
+                                         disabled="true" label="Color ojos" />
+                        
+                        <lightning:input name="input5" aura:id="starWarsform" value="{!v.datos.Genero__c}" 
+                                         disabled="true" label="Genero" />
+                        
+                        <lightning:input  aura:id="starWarsform" value="{!v.datos.URL__c}" label="URL" 
+                                          disabled="true" name="input6" />
+                        
+                        <lightning:input  aura:id="starWarsform" value="{!v.datos.Planeta__c}" label="Planeta" 
+                                          disabled="true" name="input6" />
+                        
+                        <lightning:input type="number" aura:id="starWarsform" value="{!v.datos.Numero_personaje__c}" 
+                                         name="input7" disabled="true" label="Numero de personaje"/>
+                        
+                        <lightning:button label="Guardar"
+                                          class="slds-m-top_medium"
+                                          disabled="true" 
+                                          aura:id="btnGuardar"
+                                          variant="brand"
+                                          onclick="{!c.createContact}"/>
+                        
+                        
+                        <lightning:button label="Buscar"
+                                          class="slds-m-top_medium"
+                                          variant="brand"
+                                          aura:id="btnEnviar"
+                                          onclick="{!c.buscador}"/>
+                    </form>   
+                </div> 
+            </fieldset>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

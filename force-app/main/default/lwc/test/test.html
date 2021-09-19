@@ -1,0 +1,80 @@
+<template>
+
+    {controller="FormularioController" implements="flexipage:availableForAllPageTypes" 
+    <slot name="buscadorStar"></slot>/>-->
+    
+   <div class datosPersonaje> name="datos" type="Contact"
+                    default="{'sobjectType': 'Contact'
+                             'LastName': '',
+                             'Altura__c': '',
+                             'Color_cabello__c': '',
+                             'Color_ojos__c': '',
+                             'Genero__c': '',
+                             'URL__c':'',
+                             'Planeta__c':''
+                             }>
+    </div>
+    
+
+     
+  
+   
+    <div class="slds-text-heading_large">
+                        
+                        <lightning-input type=number id="starWarsBuscador" value={v.buscadorStar}
+                                         name="ww" label="Introduzca un numero para buscar personaje" >
+                        </lightning-input>
+                        
+                        <lightning-input name="input1" aura:id="starWarsform1" value={v.datos.LastName}
+                                         disabled="true" label="Personaje" >
+                        </lightning-input>
+                        
+                        <lightning-input name="input2" aura:id="starWarsform" value= {v.datos.Altura__c}
+                                         disabled="true" label="Altura" >
+                        </lightning-input>
+                        
+                        <lightning-input name="input3" aura:id="starWarsform" value={v.datos.Color_cabello__c}
+                                         disabled="true" label="Color cabello" >
+                        </lightning-input>
+                        
+                        <lightning-input name="input4" aura:id="starWarsform" value={v.datos.Color_ojos__c}
+                                         disabled="true" label="Color ojos" >
+                        </lightning-input>
+                        
+                        <lightning-input name="input5" aura:id="starWarsform" value={v.datos.Genero__c}
+                                         disabled="true" label="Genero" >
+                        </lightning-input>
+                        
+                        <lightning-input  aura:id="starWarsform" value={datos.URL__c} label="URL" 
+                                          disabled="true" name="input6" >
+                        </lightning-input>
+                        
+                        <lightning-input  aura:id="starWarsform" value={datos.Planeta__c} label="Planeta" 
+                                          disabled="true" name="input6" >
+                        </lightning-input>
+                        
+                        <lightning-input type="number" aura:id="starWarsform" value={v.datos.Numero_personaje__c} 
+                                         name="input7" disabled="true" label="Numero de personaje">
+                        </lightning-input>
+                        
+                        <lightning-button label="Guardar"
+                                          class="slds-m-top_medium"
+                                          disabled="true" 
+                                          aura:id="btnGuardar"
+                                          variant="brand"
+                                          onclick={c.createContact}></lightning-button>
+                        
+                        
+                        <lightning-button label="Buscar"
+                                          class="slds-m-top_medium"
+                                          variant="brand"
+                                          aura:id="btnEnviar"
+                                          onclick={c.buscador}></lightning-button>
+    </div>                  
+                
+ 
+        -->
+    
+</template>
+
+

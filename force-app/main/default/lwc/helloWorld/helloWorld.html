@@ -1,0 +1,22 @@
+<template>
+  <lightning-card title="Star wars" icon-name="custom:custom14">
+     <div class="slds-m-around_small"> 
+        <lightning-input type="number" data-my-id="in3" label="Ingrese el Id de personaje para buscar" placeholder="Ingrese ID">
+        </lightning-input>
+            
+            <lightning-input type="text"  value={datos.LastName} data-my-id="in4" label="Personaje" placeholder="" disabled={disabled}></lightning-input>
+            <lightning-input type="text"  value={datos.Altura__c} data-my-id="in5" label="Altura" placeholder="" disabled={disableAltura}></lightning-input>
+            <lightning-input type="text" value={datos.Color_cabello__c} data-my-id="in6" label="Color cabello" placeholder="" disabled={disabledCabello}></lightning-input>
+            <lightning-input type="text"  value={datos.Color_ojos__c}  data-my-id="in7" label="Color ojos" placeholder="" disabled={disabledOjos}></lightning-input>
+            <lightning-input type="text" value={datos.Genero__c} data-my-id="in8" label="Genero" placeholder="" disabled={disabledGenero}></lightning-input>
+            <lightning-input type="url"  value={datos.URL__c} label="URL" data-my-id="in9" placeholder="" disabled={disabledURL}></lightning-input>
+            <lightning-input type="text"  value={datos.Planeta__c} label="Planeta" data-my-id="in10" placeholder="" disabled={disabledPlaneta}></lightning-input>
+            <lightning-input type="text"  value={datos.Numero_personaje__c} data-my-id="in11" label="Id personaje" placeholder="" disabled={disabled}></lightning-input>
+      </div>
+      
+    <div>
+      <button class="slds-button slds-button_brand " onclick={guardarContacto} id="boton" disabled={disabledSave}>Guardar</button>
+      <button class="slds-button slds-button_outline-brand" onclick={handleClick}>Buscar</button>
+    </div>  
+  </lightning-card>
+</template>
